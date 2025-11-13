@@ -8,7 +8,7 @@ export const signupSchema = Joi.object({
   firstName: Joi.string().required(),
   lastName: Joi.string().required(),
   phone: Joi.string().required(),
-  
+  avatar: Joi.string().optional(),
 });
 
 export const signinSchema = Joi.object({

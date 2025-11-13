@@ -18,6 +18,7 @@ model User {
   password      String
   firstName     String
   lastName      String
+  avatar        String?
   phone         String
   role          String  @default("user") // "user" or "admin"
   isActive      Boolean @default(true)

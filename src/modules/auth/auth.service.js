@@ -4,7 +4,7 @@ import { UserModel } from '../user/user.model.js';
 const SALT_ROUNDS = 10;
 
 export const AuthService = {
-  async signup({ username, email, password, firstName, lastName, phone }) {
+  async signup({ username, email, password, firstName, lastName, phone, avatar }) {
     const existing = await UserModel.findByEmail(email);
     if (existing) {
       const err = new Error('User already exists');
@@ -13,7 +13,7 @@ export const AuthService = {
       throw err;
     }
     const hashed = await bcrypt.hash(password, SALT_ROUNDS);
-    const user = await UserModel.create({ username, email, password: hashed, firstName, lastName, phone });
+    const user = await UserModel.create({ username, email, password: hashed, firstName, lastName, phone, avatar });
     const { password: _p, ...safeUser } = user;
     return safeUser;
   },
