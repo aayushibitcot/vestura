@@ -5,6 +5,7 @@ import userRoutes from './modules/user/user.routes.js';
 import productRoutes from './modules/product/product.routes.js';
 import categoryRoutes from './modules/category/category.routes.js';
 import cartRoutes from './modules/cart/cart.routes.js';
+import orderRoutes from './modules/order/order.routes.js';
 import { notFoundHandler, errorHandler } from './middleware/error.middleware.js';
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
