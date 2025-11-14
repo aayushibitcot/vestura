@@ -90,6 +90,11 @@ model Product {
   orderItems  OrderItem[]
   reviews     Review[]
   wishlist    WishlistItem[]
+ 
+  sizes       String[]
+  colors      String[]
+  rating      String?
+
 
   @@index([categoryId])
 }
